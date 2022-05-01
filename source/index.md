@@ -1,4 +1,3 @@
-
 ```{include} ../README.md
 ---
 end-before: <!-- github-only -->
@@ -13,6 +12,8 @@ hidden:
 maxdepth: 1
 ---
 
+Development Guide <developguide>
+Lab Library <library>
 contributing
 Code of Conduct <codeofconduct>
 License <license>

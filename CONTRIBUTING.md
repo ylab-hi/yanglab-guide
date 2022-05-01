@@ -37,12 +37,12 @@ Request features on the [Issue Tracker].
 
 # How to set up your development environment
 
-
 Install the package with development requirements:
 
 ```console
 $ pip install -f requirements.txt
 ```
+
 # How to test the project
 
 Run the full test suite:
@@ -73,5 +73,7 @@ It is recommended to open an issue before starting work on anything.
 This will allow a chance to talk it over with the owners and validate your approach.
 
 [pull request]: https://github.com/ylab-hi/yanglab-guide/pulls
+
 <!-- github-only -->
+
 [code of conduct]: CODE_OF_CONDUCT.md

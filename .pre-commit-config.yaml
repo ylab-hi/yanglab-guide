@@ -1,6 +1,7 @@
 # Install pre-commit hooks via
 # pre-commit install
-
+default_language_version:
+    python: python3
 exclude: >
     (?x)^(
       \.vscode/settings\.json|
@@ -30,4 +31,4 @@ repos:
     rev: v2.6.2
     hooks:
       - id: prettier
-        types_or: [scss, javascript]
+        types_or: [scss, javascript, markdown]
