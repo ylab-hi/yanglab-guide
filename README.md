@@ -9,7 +9,7 @@
 [![last commit](https://img.shields.io/github/last-commit/ylab-hi/yanglab-guide)][last commit]
 
 [license]: https://opensource.org/licenses/MIT
-[read the docs]: https://pyboxes.readthedocs.io/
+[read the docs]: https://yanglab-guide.readthedocs.io/en/latest/
 [check documentation]: https://github.com/ylab-hi/yanglab-guide/actions/workflows/docs.yml
 [precommit]: https://github.com/pre-commit/pre-commit
 [contributor covenant]: https://github.com/ylab-hi/yanglab-guide/blob/main/CODE_OF_CONDUCT.md
