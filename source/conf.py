@@ -114,3 +114,6 @@ html_theme_options = {
     # "extra_navbar": "<a href='https://google.com'>Test</a>",
     # "show_navbar_depth": 2,
 }
+
+
+bibtex_bibfiles = ["references.bib"]
