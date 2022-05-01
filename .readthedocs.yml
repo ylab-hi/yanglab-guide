@@ -3,6 +3,6 @@ sphinx:
   configuration: source/conf.py
 formats: all
 python:
-  version: 3.9
+  version: 3.8
   install:
     - requirements: source/requirements.txt
