@@ -19,8 +19,8 @@
 from datetime import datetime
 
 project = "yanglab-guide"
+author = "Yangang Li"
 copyright = f"{datetime.now().year}, yanglab"
-author = "yanglab"
 
 # The full version, including alpha/beta/rc tags
 release = "1.0"
@@ -31,10 +31,13 @@ release = "1.0"
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ["myst_parser"]
-
+extensions = ["myst_parser", "sphinx.ext.intersphinx"]
+intersphinx_mapping = {"mypy": ("https://mypy.readthedocs.io/en/stable/", None)}
 source_suffix = [".rst", ".md"]
-
+language = "en"
+linkcheck_ignore = [
+    "codeofconduct.html",
+]
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 

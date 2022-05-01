@@ -5,7 +5,4 @@ formats: all
 python:
   version: 3.9
   install:
-    - requirements: requirements.txt
-    - path: .
-build:
-  image: testing
+    - requirements: source/requirements.txt
