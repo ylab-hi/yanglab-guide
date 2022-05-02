@@ -134,7 +134,7 @@ def build_gallery(app: Sphinx):
     # Build the gallery file
     LOGGER.info("building gallery...")
     grid_items = []
-    projects = yaml.safe_load((Path(app.srcdir) / "gallery.yml").read_text())
+    projects = yaml.safe_load((Path(app.srcdir) / "library.yml").read_text())
     random.shuffle(projects)
     for item in projects:
         if not item.get("image"):
