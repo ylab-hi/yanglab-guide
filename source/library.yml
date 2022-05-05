@@ -1,7 +1,9 @@
 - name: Data Science for Finance
   star: 5
   image: https://raw.githubusercontent.com/LeDataSciFi/ledatascifi-2022/main/content/logo.png
-- name: Graph Pandas
-  star: 2
 - name: Algorithms for next-generation sequencing
+  star: 5
+- name: Accelerated C++
+  star: 5
+- name: Modern C++ Programming Cookbook
   star: 5

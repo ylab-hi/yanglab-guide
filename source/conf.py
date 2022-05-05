@@ -15,6 +15,7 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 
+import asyncio
 import random
 
 # -- Project information -----------------------------------------------------
@@ -22,7 +23,9 @@ from datetime import datetime
 from pathlib import Path
 from textwrap import dedent
 
+import aiohttp
 import yaml
+from lxml import etree
 from sphinx.application import Sphinx
 from sphinx.util import logging
 
@@ -129,20 +132,59 @@ html_theme_options = {
 bibtex_bibfiles = ["references.bib"]
 
 
+def get_cover_images(items):
+
+    asyncio.run(_get_cover_images(items))
+
+
+async def _get_cover_images(items):
+    async with aiohttp.ClientSession() as session:
+        tasks = []
+        for item in items:
+            if not item.get("image"):
+                tasks.append(_get_cover_image_worker(item, session))
+        await asyncio.gather(*tasks)
+
+
+async def _get_cover_image_worker(item, session):
+    default_cover = "https://raw.githubusercontent.com/ylab-hi/yanglab-guide/main/source/_static/book.svg"
+    zlib_domain = "https://usa1lib.org"
+    header = {
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36"
+    }
+    zlib_search_domain = f"{zlib_domain}/s/"
+
+    title = item["name"]
+
+    async with session.get(zlib_search_domain + title, headers=header) as resp:
+        try:
+            resp.raise_for_status()
+        except Exception as e:
+            LOGGER.info(f"Failed to fetch {title} cover using default\n{e.args}")
+            item["image"] = default_cover
+        else:
+            tree = etree.HTML(await resp.text())
+            cover = tree.xpath(
+                "//div[@class='resItemBox resItemBoxBooks exactMatch'][1]//div[@class='z-book-precover']/a/img/@data-src"
+            )
+            if not cover:
+                LOGGER.info(f"Failed to fetch {title} cover using default")
+                item["image"] = default_cover
+            else:
+                item["image"] = cover[0].replace("covers100", "covers")
+
+
 def build_gallery(app: Sphinx):
     # Build the gallery file
     LOGGER.info("building gallery...")
     star = "⭐"
     grid_items = []
-    projects = yaml.safe_load((Path(app.srcdir) / "library.yml").read_text())
-    random.shuffle(projects)
+    books = yaml.safe_load((Path(app.srcdir) / "library.yml").read_text())
+    random.shuffle(books)
 
-    for item in projects:
-        if not item.get("image"):
-            item[
-                "image"
-            ] = "https://raw.githubusercontent.com/ylab-hi/yanglab-guide/main/source/_static/book.svg"
+    get_cover_images(books)
 
+    for item in books:
         star_num = 1 if not item.get("star") else int(item["star"])
         star_text = (
             f"![Star](https://img.shields.io/badge/Recommend-{star_num * star}-green)"
@@ -164,7 +206,7 @@ def build_gallery(app: Sphinx):
             f"""\
         `````{{grid-item-card}} {" ".join(item["name"].split())}
         :text-align: center
-        <img src="{item["image"]}" alt="logo" loading="lazy" style="max-width: 100%; max-height: 200px; margin-top: 1rem;" />
+        <img src="{item["image"]}" alt="logo" loading="lazy" style="max-width: 100%; max-height: 150px; margin-top: 1rem;" />
         +++
 
         ````{{grid}} 2 2 2 2

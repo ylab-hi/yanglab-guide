@@ -5,3 +5,5 @@ __pycache__/
 .idea/
 .vscode/
 source/gallery.txt
+.ipynb*
+/prototype/
