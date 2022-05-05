@@ -171,6 +171,7 @@ async def _get_cover_image_worker(item, session):
                 LOGGER.info(f"Failed to fetch {title} cover using default")
                 item["image"] = default_cover
             else:
+                LOGGER.info(f"Fetch {title} cover from zlib")
                 item["image"] = cover[0].replace("covers100", "covers")
 
 
