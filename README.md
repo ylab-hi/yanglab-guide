@@ -16,6 +16,24 @@
 
 The repo contain content about yang's lab guide.
 
+# 📓 Content
+
+- Development Guide
+- Lab Library
+- More to come
+
+## 🤗 Contributing
+
+Contributions are very welcome. To learn more, see the [Contributor Guide].
+
+## 🤖 License
+
+Distributed under the terms of the [MIT license],
+
+## 🤔 Issues
+
+If you encounter any problems, please [file an issue] along with a detailed description.
+
 <!-- github-only -->
 
 [contributor guide]: CONTRIBUTING.md

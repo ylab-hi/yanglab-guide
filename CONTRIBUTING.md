@@ -40,15 +40,21 @@ Request features on the [Issue Tracker].
 Install the package with development requirements:
 
 ```console
-$ pip install -f requirements.txt
+$ pip install -r requirements.txt
 ```
 
-# How to test the project
+# How to build the project
 
 Run the full test suite:
 
 ```console
-$ make build
+$ make html
+```
+
+# How to get help
+
+```console
+$ make help
 ```
 
 # How to submit changes
@@ -58,7 +64,6 @@ Open a [pull request] to submit changes to this project.
 Your pull request needs to meet the following guidelines for acceptance:
 
 - The test suite must pass without errors and warnings.
-- Include unit tests. This project maintains 100% code coverage.
 - If your changes add functionality, update the documentation accordingly.
 
 Feel free to submit early, though—we can always iterate on this.

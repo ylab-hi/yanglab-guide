@@ -141,7 +141,7 @@ def build_gallery(app: Sphinx):
         if not item.get("image"):
             item[
                 "image"
-            ] = "https://github.com/ylab-hi/yanglab-guide/blob/main/source/_static/logo.png"
+            ] = "https://raw.githubusercontent.com/ylab-hi/yanglab-guide/main/source/_static/book.svg"
 
         star_num = 1 if not item.get("star") else int(item["star"])
         star_text = (
