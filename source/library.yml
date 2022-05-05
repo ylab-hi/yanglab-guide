@@ -7,3 +7,21 @@
   star: 5
 - name: Modern C++ Programming Cookbook
   star: 5
+- name: Deep Learning
+  star: 5
+- name: Reinforcement Learning
+  star: 5
+- name: Hands-On Design Patterns with C++
+  star: 5
+- name: C++ Concurrency IN ACTION
+  star: 5
+- name: Introduction to Algorithms
+  star: 5
+- name: Deep Learning with Python
+  star: 5
+- name: Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow
+  star: 5
+- name: Practial Natural Language Processing
+  star: 4
+- name: Natural Language Processing with Transformer
+  star: 5
