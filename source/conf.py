@@ -15,15 +15,14 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 
+import random
+
 # -- Project information -----------------------------------------------------
 from datetime import datetime
 from pathlib import Path
-import random
 from textwrap import dedent
-from urllib.parse import urlparse
 
 import yaml
-
 from sphinx.application import Sphinx
 from sphinx.util import logging
 
@@ -113,10 +112,10 @@ html_theme_options = {
     "use_download_button": True,
     "logo_only": True,
     "show_toc_level": 2,
-    "announcement": (
-        "⚠️The latest release refactored our HTML, "
-        "so double-check your custom CSS rules!⚠️"
-    ),
+    # "announcement": (
+    #     "⚠️The Lab Guide of Yang Lab, "
+    #     "so double-check your custom CSS rules!⚠️"
+    # ),
     # For testing
     # "use_fullscreen_button": False,
     # "home_page_in_toc": True,
@@ -133,27 +132,33 @@ bibtex_bibfiles = ["references.bib"]
 def build_gallery(app: Sphinx):
     # Build the gallery file
     LOGGER.info("building gallery...")
+    star = "⭐"
     grid_items = []
     projects = yaml.safe_load((Path(app.srcdir) / "library.yml").read_text())
     random.shuffle(projects)
+
     for item in projects:
         if not item.get("image"):
-            item["image"] = "https://jupyterbook.org/_images/logo-square.svg"
+            item[
+                "image"
+            ] = "https://github.com/ylab-hi/yanglab-guide/blob/main/source/_static/logo.png"
 
-        repo_text = ""
-        star_text = ""
+        star_num = 1 if not item.get("star") else int(item["star"])
+        star_text = (
+            f"![Star](https://img.shields.io/badge/Recommend-{star_num * star}-green)"
+        )
+        # repo_text = ""
+        # if item["repository"]:
+        #     repo_text = f'{{bdg-link-secondary}}`repo <{item["repository"]}>`'
 
-        if item["repository"]:
-            repo_text = f'{{bdg-link-secondary}}`repo <{item["repository"]}>`'
-
-            try:
-                url = urlparse(item["repository"])
-                if url.netloc == "github.com":
-                    _, org, repo = url.path.rstrip("/").split("/")
-                    star_text = f"[![GitHub Repo stars](https://img.shields.io/github/stars/{org}/{repo}?style=social)]({item['repository']})"
-            except Exception as error:
-                LOGGER.warning(f"failed to parse repository url: {error}")
-                pass
+        #     try:
+        #         url = urlparse(item["repository"])
+        #         if url.netloc == "github.com":
+        #             _, org, repo = url.path.rstrip("/").split("/")
+        #             star_text = f"[![GitHub Repo stars](https://img.shields.io/github/stars/{org}/{repo}?style=social)]({item['repository']})"
+        #     except Exception as error:
+        #         LOGGER.warning(f"failed to parse repository url: {error}")
+        #         pass
 
         grid_items.append(
             f"""\
@@ -161,23 +166,20 @@ def build_gallery(app: Sphinx):
         :text-align: center
         <img src="{item["image"]}" alt="logo" loading="lazy" style="max-width: 100%; max-height: 200px; margin-top: 1rem;" />
         +++
+
         ````{{grid}} 2 2 2 2
         :margin: 0 0 0 0
         :padding: 0 0 0 0
         :gutter: 1
-        ```{{grid-item}}
-        :child-direction: row
-        :child-align: start
-        :class: sd-fs-5
-        {{bdg-link-secondary}}`website <{item["website"]}>`
-        {repo_text}
-        ```
+
         ```{{grid-item}}
         :child-direction: row
         :child-align: end
         {star_text}
         ```
+
         ````
+
         `````
         """
         )
