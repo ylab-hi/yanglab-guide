@@ -22,6 +22,11 @@ The repo contain content about yang's lab guide.
 - Lab Library
 - More to come
 
+# 🚀 Features
+
+- [ ] Add Amazon Link for Lab books
+- [ ] Fetch cover image from Amazon
+
 ## 🤗 Contributing
 
 Contributions are very welcome. To learn more, see the [Contributor Guide].
