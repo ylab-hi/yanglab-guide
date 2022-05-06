@@ -24,9 +24,10 @@ The repo contain content about yang's lab guide.
 
 # 🚀 Features
 
-- [x] Fetch cover image of book from zlibrary
-- [ ] Add Amazon Link for Lab books
-- [ ] Fetch cover image of books from Amazon
+- [x] Cover image of book from zlibrary
+- [ ] Amazon Link for Lab books
+- [ ] Cover image of books from Amazon
+- [ ] Development guide of Lab
 
 ## 🤗 Contributing
 
