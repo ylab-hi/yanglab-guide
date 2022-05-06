@@ -87,6 +87,8 @@ latexcodec==2.0.1
     # via
     #   -r requirements.txt
     #   pybtex
+linkify-it-py==1.0.3
+    # via -r requirements.txt
 livereload==2.6.3
     # via
     #   -r requirements.txt
@@ -248,6 +250,8 @@ typing-extensions==4.2.0
     # via
     #   -r requirements.txt
     #   myst-parser
+uc-micro-py==1.0.1
+    # via linkify-it-py
 urllib3==1.26.9
     # via
     #   -r requirements.txt

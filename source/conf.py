@@ -57,6 +57,23 @@ extensions = [
     "sphinxcontrib.youtube",
     "sphinxext.opengraph",
 ]
+
+myst_enable_extensions = [
+    "amsmath",
+    "colon_fence",
+    "deflist",
+    "dollarmath",
+    "fieldlist",
+    "html_admonition",
+    "html_image",
+    "linkify",
+    "replacements",
+    "smartquotes",
+    "strikethrough",
+    "substitution",
+    "tasklist",
+]
+
 intersphinx_mapping = {
     "mypy": ("https://mypy.readthedocs.io/en/stable/", None),
     "python": ("https://docs.python.org/3.8", None),
