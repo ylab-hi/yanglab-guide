@@ -156,6 +156,7 @@ async def _get_cover_image_worker(item, session):
 
     title = item["name"]
 
+    first_num = 4
     async with session.get(zlib_search_domain + title, headers=header) as resp:
         try:
             resp.raise_for_status()
@@ -165,14 +166,30 @@ async def _get_cover_image_worker(item, session):
         else:
             tree = etree.HTML(await resp.text())
             cover = tree.xpath(
-                "//div[@class='resItemBox resItemBoxBooks exactMatch'][1]//div[@class='z-book-precover']/a/img/@data-src"
+                f"//div[@class='resItemBox resItemBoxBooks exactMatch'][position()<{first_num}]//div[@class='z-book-precover']/a/img/@data-src"
+            )
+
+            names = tree.xpath(
+                f"//div[@class='resItemBox resItemBoxBooks exactMatch'][position()<{first_num}]//h3[@itemprop='name']/a/text()"
             )
             if not cover:
-                LOGGER.info(f"Failed to fetch {title} cover using default")
+                # LOGGER.info(f"Failed to fetch {title} cover using default")
                 item["image"] = default_cover
-            else:
+            elif len(cover) == 1:
                 LOGGER.info(f"Fetch {title} cover from zlib")
                 item["image"] = cover[0].replace("covers100", "covers")
+            else:
+                LOGGER.info(f"Fetch {title} cover from zlib")
+                LOGGER.info(names)
+                item["image"] = find_proper_cover(cover, names, title)
+
+
+def find_proper_cover(covers, names, title):
+    info = {n: c for c, n in zip(covers, names)}
+    names.sort(key=lambda x: abs(len(title) - len(x)))
+    right_cover = info[names[0]]
+
+    return right_cover.replace("covers100", "covers")
 
 
 def build_gallery(app: Sphinx):
