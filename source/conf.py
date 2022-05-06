@@ -249,8 +249,8 @@ def build_gallery(app: Sphinx):
     # :card: +my-2
     # :img-top-cls: w-75 m-auto p-2
     # :body: d-none
-
     panels = f"""
+![books](https://img.shields.io/badge/Total%20Books-{len(books)}-red?style=for-the-badge&logo=gitbook)
 ``````{{grid}} 1 2 3 3
 :gutter: 1 1 2 2
 :class-container: full-width
