@@ -28,6 +28,7 @@ The repo contain content about yang's lab guide.
 - [ ] Amazon Link for Lab books
 - [ ] Cover image of books from Amazon
 - [ ] Development guide of Lab
+- [ ] Story behind Project
 
 ## 🤗 Contributing
 
