@@ -27,3 +27,23 @@
   star: 5
 - name: Refactoring - Improving the design of existing code
   star: 4
+- name: High Performance Python
+  star: 3
+- name: Computational Genomics With R
+- name: Genome-Scale Algorithm Design
+- name: Bioinformatics Algorithms An Active Learning Approach
+  star: 4
+- name: Python Testing with pytest
+  star: 3
+- name: Machine Learning With Python Cookbook
+- name: Bioinformatics Algorithms Design and Implementation in Python
+- name: Integer Linear Programming In Computational and Systems Biology
+- name: The Human Genome in Health and Disease
+- name: Genetics and Genomics in Medicine
+- name: Algorithms Illuminated Part 1: The Basics
+- name: Algorithms Illuminated Part 2: Graph Algorithms and Data Structures
+- name: Algorithms Illuminated Part 3: Greedy Algorithms and Dynamic Programming 
+- name: Algorithms Illuminated Part 4: Algorithm for NP-HARD Problems
+- name: Mastering Python for Bioinformatics
+
+
