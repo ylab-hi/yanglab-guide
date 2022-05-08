@@ -25,10 +25,10 @@ The repo contain content about yang's lab guide.
 # 🚀 Features
 
 - [x] Cover image of book from zlibrary
-- [ ] Amazon Link for Lab books
-- [ ] Cover image of books from Amazon
+- [x] Amazon Link for Lab books
 - [ ] Development guide of Lab
 - [ ] Story behind Project
+- [ ] Cover image of books from Amazon
 
 ## 🤗 Contributing
 

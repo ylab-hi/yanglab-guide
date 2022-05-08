@@ -216,6 +216,7 @@ def build_gallery(app: Sphinx):
     star = "⭐"
     grid_items = []
     books = yaml.safe_load((Path(app.srcdir) / "library.yml").read_text())
+    amazon_domain = "https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords="
     random.shuffle(books)
 
     get_cover_images(books)
@@ -225,24 +226,13 @@ def build_gallery(app: Sphinx):
         star_text = (
             f"![Star](https://img.shields.io/badge/Recommend-{star_num * star}-green)"
         )
-        # repo_text = ""
-        # if item["repository"]:
-        #     repo_text = f'{{bdg-link-secondary}}`repo <{item["repository"]}>`'
-
-        #     try:
-        #         url = urlparse(item["repository"])
-        #         if url.netloc == "github.com":
-        #             _, org, repo = url.path.rstrip("/").split("/")
-        #             star_text = f"[![GitHub Repo stars](https://img.shields.io/github/stars/{org}/{repo}?style=social)]({item['repository']})"
-        #     except Exception as error:
-        #         LOGGER.warning(f"failed to parse repository url: {error}")
-        #         pass
 
         grid_items.append(
             f"""\
         `````{{grid-item-card}} {" ".join(item["name"].split())}
         :text-align: center
-        <img src="{item["image"]}" alt="logo" loading="lazy" style="max-width: 100%; max-height: 150px; margin-top: 1rem;" />
+        <a href="{amazon_domain + item['name']}" target='_blank'>
+        <img src="{item["image"]}" alt="logo" loading="lazy" style="max-width: 100%; max-height: 150px; margin-top: 1rem;" /> </a>
         +++
 
         ````{{grid}} 2 2 2 2
