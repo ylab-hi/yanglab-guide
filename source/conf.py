@@ -155,7 +155,8 @@ def get_cover_images(items):
 
 
 async def _get_cover_images(items):
-    async with aiohttp.ClientSession() as session:
+    timeout = aiohttp.client.ClientTimeout(2 * 60)
+    async with aiohttp.ClientSession(timeout=timeout) as session:
         tasks = []
         for item in items:
             if not item.get("image"):
