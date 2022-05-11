@@ -144,7 +144,7 @@ pygments==2.12.0
     #   -r requirements.txt
     #   sphinx
     #   sphinx-tabs
-pyparsing==3.0.8
+pyparsing==3.0.9
     # via
     #   -r requirements.txt
     #   packaging
