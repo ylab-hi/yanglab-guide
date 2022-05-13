@@ -74,7 +74,7 @@ imagesize==1.3.0
     # via
     #   -r requirements.txt
     #   sphinx
-invoke==1.7.0
+invoke==1.7.1
     # via
     #   -r requirements.txt
     #   ablog
