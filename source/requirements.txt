@@ -131,7 +131,7 @@ pybtex==0.24.0
     #   -r requirements.txt
     #   pybtex-docutils
     #   sphinxcontrib-bibtex
-pybtex-docutils==1.0.1
+pybtex-docutils==1.0.2
     # via
     #   -r requirements.txt
     #   sphinxcontrib-bibtex
