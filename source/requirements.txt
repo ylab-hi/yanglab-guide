@@ -182,7 +182,7 @@ soupsieve==2.3.2.post1
     # via
     #   -r requirements.txt
     #   beautifulsoup4
-sphinx==5.0.0
+sphinx==4.5.0
     # via
     #   -r requirements.txt
     #   ablog
@@ -251,7 +251,9 @@ typing-extensions==4.2.0
     #   -r requirements.txt
     #   myst-parser
 uc-micro-py==1.0.1
-    # via linkify-it-py
+    # via
+    #   -r requirements.txt
+    #   linkify-it-py
 urllib3==1.26.9
     # via
     #   -r requirements.txt
