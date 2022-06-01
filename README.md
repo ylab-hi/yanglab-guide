@@ -16,6 +16,16 @@
 
 The repo contain content about yang's lab guide.
 
+# Core Values of Lab
+
+| :star: Core Values                               | Definition                                                                                                                                                                | Positive Observable Behavior                                                                                        | Negative Observable                                                                                   |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Mutual Respect**                               | Mutual respect is the foundation of every interaction. We will respect all backgrounds, identities, experiences, and perspective                                          | Being respectful of colleagues's time when asking for assistance                                                    | Demanding immediate help                                                                              |
+| **Honesty & Integrity**                          | Our leaders lead by example and make thoughtful informed, transparent decisions. We always strive to demonstrate fairness, sincerity and accountability in the workplace. | Providing well-though-out responses to questions or stating "I don't know the answer".                              | Providing a quick vague response that may not be accurate                                             |
+| **Transparency Accountability & Responsibility** | Trust, transparency, and accountability contribute to positive workplace relationships and enhance job and performance.                                                   | Explaining decisions, taking responsibility for errors, working together to achieve goals.                          | Blaming others or making excuses. Disregarding feedback.                                              |
+| **Communication**                                | Open and transparent communications across Our Lab is essential. In all interactions we will "always assume positive intent" to accomplish this goal.                     | Active listening, audible speaking, sharing feedback, and respecting others by not interrupting.                    | Interrupting others, or not responding to questions.                                                  |
+| **Collaborations & Innovation**                  | As a global and diverse biomedical research institute, we strive to advance scientific discovery through opportunities to stimulate synergy and innovative thinking.      | Actively participating in journal clubs, internal groups, & informal meetings. Collaborating with other colleagues. | Passively refusing to participate in activities. Collaborating only with colleagues in similar roles. |
+
 # 📓 Content
 
 - Development Guide
