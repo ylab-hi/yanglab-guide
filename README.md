@@ -16,7 +16,7 @@
 
 The repo contain content about yang's lab guide.
 
-# 🌟 Core Values of Lab
+## 🌟 Core Values of Lab
 
 | Core Values                                      | Definition                                                                                                                                                                | Positive Observable Behavior                                                                                        | Negative Observable                                                                                   |
 | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
@@ -26,19 +26,21 @@ The repo contain content about yang's lab guide.
 | **Communication**                                | Open and transparent communications across Our Lab is essential. In all interactions we will "always assume positive intent" to accomplish this goal.                     | Active listening, audible speaking, sharing feedback, and respecting others by not interrupting.                    | Interrupting others, or not responding to questions.                                                  |
 | **Collaborations & Innovation**                  | We strive to advance scientific discovery through opportunities to stimulate synergy and innovative thinking.      | Actively participating in journal clubs, internal groups, & informal meetings. Collaborating with other colleagues. | Passively refusing to participate in activities. Collaborating only with colleagues in similar roles. |
 
-# 📓 Content
+## 📓 Content
 
 - Development Guide
 - Lab Library
 - More to come
 
-# 🚀 Features
+## 🚀 RoadMap
 
 - [x] Cover image of book from zlibrary
 - [x] Amazon Link for Lab books
 - [ ] Development guide of Lab
 - [ ] Story behind Project
 - [ ] Cover image of books from Amazon
+- [ ] Python Development Guide 
+- [ ] C++ Development Guide
 
 ## 🤗 Contributing
 
