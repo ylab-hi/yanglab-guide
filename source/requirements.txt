@@ -135,7 +135,7 @@ pybtex-docutils==1.0.2
     # via
     #   -r requirements.txt
     #   sphinxcontrib-bibtex
-pydata-sphinx-theme==0.8.1
+pydata-sphinx-theme==0.9.0
     # via
     #   -r requirements.txt
     #   sphinx-book-theme
