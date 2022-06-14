@@ -24,7 +24,7 @@ attrs==21.4.0
     # via
     #   -r requirements.txt
     #   aiohttp
-babel==2.10.1
+babel==2.10.2
     # via
     #   -r requirements.txt
     #   sphinx
