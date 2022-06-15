@@ -238,7 +238,7 @@ sphinxcontrib-serializinghtml==1.1.5
     # via
     #   -r requirements.txt
     #   sphinx
-sphinxcontrib-youtube==1.1.0
+sphinxcontrib-youtube==1.2.0
     # via -r requirements.txt
 sphinxext-opengraph==0.6.3
     # via -r requirements.txt
