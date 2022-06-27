@@ -206,7 +206,7 @@ sphinx-copybutton==0.5.0
     # via -r requirements.txt
 sphinx-design==0.2.0
     # via -r requirements.txt
-sphinx-tabs==3.3.1
+sphinx-tabs==3.4.0
     # via -r requirements.txt
 sphinx-thebe==0.1.2
     # via -r requirements.txt
