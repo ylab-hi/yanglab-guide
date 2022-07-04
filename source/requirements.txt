@@ -242,7 +242,7 @@ sphinxcontrib-youtube==1.2.0
     # via -r requirements.txt
 sphinxext-opengraph==0.6.3
     # via -r requirements.txt
-tornado==6.1
+tornado==6.2
     # via
     #   -r requirements.txt
     #   livereload
