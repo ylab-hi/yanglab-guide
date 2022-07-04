@@ -246,7 +246,7 @@ tornado==6.1
     # via
     #   -r requirements.txt
     #   livereload
-typing-extensions==4.2.0
+typing-extensions==4.3.0
     # via
     #   -r requirements.txt
     #   myst-parser
