@@ -45,7 +45,7 @@ colorama==0.4.5
     # via
     #   -r requirements.txt
     #   sphinx-autobuild
-docutils==0.17.1
+docutils==0.19
     # via
     #   -r requirements.txt
     #   ablog
