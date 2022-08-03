@@ -4,7 +4,7 @@
 #
 #    pip-compile requirements.txt
 #
-ablog==0.10.27
+ablog==0.10.28
     # via -r requirements.txt
 aiohttp==3.8.1
     # via -r requirements.txt
