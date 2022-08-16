@@ -139,7 +139,7 @@ pydata-sphinx-theme==0.8.1
     # via
     #   -r requirements.txt
     #   sphinx-book-theme
-pygments==2.12.0
+pygments==2.13.0
     # via
     #   -r requirements.txt
     #   sphinx
