@@ -254,7 +254,7 @@ uc-micro-py==1.0.1
     # via
     #   -r requirements.txt
     #   linkify-it-py
-urllib3==1.26.11
+urllib3==1.26.12
     # via
     #   -r requirements.txt
     #   requests
