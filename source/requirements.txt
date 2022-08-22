@@ -216,7 +216,7 @@ sphinxcontrib-applehelp==1.0.2
     # via
     #   -r requirements.txt
     #   sphinx
-sphinxcontrib-bibtex==2.4.2
+sphinxcontrib-bibtex==2.5.0
     # via -r requirements.txt
 sphinxcontrib-devhelp==1.0.2
     # via
