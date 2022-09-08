@@ -5,4 +5,4 @@ nox==2022.8.7
 nox-poetry==1.0.1
 poetry==1.2.0
 pre-commit==2.20.0
-virtualenv==20.16.4
+virtualenv==20.16.5
