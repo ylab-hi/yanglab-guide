@@ -105,7 +105,7 @@ markupsafe==2.1.1
     # via
     #   -r source/requirements.txt
     #   jinja2
-mdit-py-plugins==0.3.0
+mdit-py-plugins==0.3.1
     # via
     #   -r source/requirements.txt
     #   myst-parser
