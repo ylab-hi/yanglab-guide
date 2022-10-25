@@ -41,7 +41,7 @@ charset-normalizer==2.1.1
     #   -r source/requirements.txt
     #   aiohttp
     #   requests
-colorama==0.4.5
+colorama==0.4.6
     # via
     #   -r source/requirements.txt
     #   sphinx-autobuild
