@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file=requirements.txt source/requirements.txt
 #
-ablog==0.10.29
+ablog==0.10.32
     # via -r source/requirements.txt
 aiohttp==3.8.3
     # via -r source/requirements.txt
