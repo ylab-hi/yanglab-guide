@@ -147,7 +147,7 @@ bibtex_bibfiles = ["references.bib"]
 
 
 def get_cover_images(items):
-    asyncio.run(_get_cover_images(items), debug=True)
+    asyncio.run(_get_cover_images(items))
 
 
 async def _get_cover_images(items):
