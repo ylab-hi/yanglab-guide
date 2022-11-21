@@ -203,8 +203,8 @@ async def _fetch_image(session, url, header):
     async with session.get(url, headers=header) as resp:
         try:
             resp.raise_for_status()
-        except Exception as _:
-            LOGGER.info(f"Failed to fetch image cover from {url}")
+        except Exception as e:
+            LOGGER.info(f"Failed to fetch image cover from {url} \n{e.args}")
             return cover
         else:
             t = await resp.text()
