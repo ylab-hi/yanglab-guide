@@ -22,6 +22,8 @@ import random
 from datetime import datetime
 from pathlib import Path
 from textwrap import dedent
+from typing import List
+import re
 
 import aiohttp
 import yaml
@@ -37,7 +39,6 @@ copyright = f"{datetime.now().year}, yanglab"
 
 # The full version, including alpha/beta/rc tags
 release = "1.0"
-
 
 # -- General configuration ---------------------------------------------------
 
@@ -87,12 +88,10 @@ linkcheck_ignore = [
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
-
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
-
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -112,7 +111,6 @@ html_theme_options = {
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 html_logo = "_static/logo.png"
-
 
 html_theme_options = {
     "path_to_docs": "source",
@@ -145,13 +143,11 @@ html_theme_options = {
     # "show_navbar_depth": 2,
 }
 
-
 bibtex_bibfiles = ["references.bib"]
 
 
 def get_cover_images(items):
-
-    asyncio.run(_get_cover_images(items))
+    asyncio.run(_get_cover_images(items), debug=True)
 
 
 async def _get_cover_images(items):
@@ -166,16 +162,16 @@ async def _get_cover_images(items):
 
 async def _get_cover_image_worker(item, session):
     default_cover = "https://raw.githubusercontent.com/ylab-hi/yanglab-guide/main/source/_static/book.svg"
-    zlib_domain = "https://usa1lib.org"
+    base_domain = "https://www.goodreads.com"
+    search_domain = base_domain + "/search/"
     header = {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36"
+        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/100.0.4896.88 Safari/537.36 "
     }
-    zlib_search_domain = f"{zlib_domain}/s/"
 
     title = item["name"]
-
     first_num = 4
-    async with session.get(zlib_search_domain + title, headers=header) as resp:
+    async with session.get(search_domain, params={"q": title}, headers=header) as resp:
         try:
             resp.raise_for_status()
         except Exception as e:
@@ -183,31 +179,42 @@ async def _get_cover_image_worker(item, session):
             item["image"] = default_cover
         else:
             tree = etree.HTML(await resp.text())
-            cover = tree.xpath(
-                f"//div[@class='resItemBox resItemBoxBooks exactMatch'][position()<{first_num}]//div[@class='z-book-precover']/a/img/@data-src"
-            )
 
-            names = tree.xpath(
-                f"//div[@class='resItemBox resItemBoxBooks exactMatch'][position()<{first_num}]//h3[@itemprop='name']/a/text()"
+            cover_urls: List[str] = tree.xpath(
+                f"//table[@class='tableList']//tr[position()<{first_num}]//a[@class='bookTitle']/@href"
             )
+            names: List[str] = tree.xpath(
+                f"//table[@class='tableList']//tr[position()<{first_num}]//td/a/@title"
+            )
+            assert len(cover_urls) == len(names)
+
+            # fetch the first one
+            cover = await _fetch_image(session, base_domain + cover_urls[0], header)
+
             if not cover:
-                # LOGGER.info(f"Failed to fetch {title} cover using default")
+                LOGGER.info(f"Failed to fetch {title} cover using default")
                 item["image"] = default_cover
-            elif len(cover) == 1:
-                LOGGER.info(f"Fetch {title} cover from zlib")
-                item["image"] = cover[0].replace("covers100", "covers")
             else:
-                LOGGER.info(f"Fetch {title} cover from zlib")
-                LOGGER.info(names)
-                item["image"] = find_proper_cover(cover, names, title)
+                item["image"] = cover[0]
 
 
-def find_proper_cover(covers, names, title):
-    info = {n: c for c, n in zip(covers, names)}
-    names.sort(key=lambda x: abs(len(title) - len(x)))
-    right_cover = info[names[0]]
+async def _fetch_image(session, url, header):
+    cover = []
+    async with session.get(url, headers=header) as resp:
+        try:
+            resp.raise_for_status()
+        except Exception as _:
+            LOGGER.info(f"Failed to fetch image cover from {url}")
+            return cover
+        else:
+            t = await resp.text()
+            tree = etree.HTML(t)
+            cover.extend(tree.xpath("//img[@id='coverImage']/@src"))
 
-    return right_cover.replace("covers100", "covers")
+            if not cover:
+                pat = re.compile(r"<img id=\"coverImage\" .+? src=\"(.+)\" />")
+                cover.extend(re.findall(pat, t))
+            return cover
 
 
 def build_gallery(app: Sphinx):
