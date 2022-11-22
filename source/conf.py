@@ -277,7 +277,7 @@ def build_gallery(app: Sphinx):
         `````{{grid-item-card}} {" ".join(item["name"].split())}
         :text-align: center
         <a href="{amazon_domain + item['name']}" target='_blank'>
-        <img src="{item["image"]}" alt="logo" loading="lazy" style="max-width: 100%; max-height: 150px; margin-top: 1rem;" /> </a>
+        <img src="{item["image"]}" alt="logo" loading="lazy" style="max-width: 100%; max-height: 350px; margin-top: 1rem;" /> </a>
         +++
 
         ````{{grid}} 2 2 2 2
