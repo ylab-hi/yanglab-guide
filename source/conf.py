@@ -26,10 +26,12 @@ from typing import List
 import re
 
 import aiohttp
+import aiofiles
 import yaml
 from lxml import etree
 from sphinx.application import Sphinx
 from sphinx.util import logging
+import os
 
 LOGGER = logging.getLogger("conf")
 
@@ -145,9 +147,30 @@ html_theme_options = {
 
 bibtex_bibfiles = ["references.bib"]
 
+GITHUB_URL = "https://raw.githubusercontent.com/ylab-hi/yanglab-guide/main"
+
 
 def get_cover_images(items):
     asyncio.run(_get_cover_images(items))
+
+
+async def download(url, name, headers, session: aiohttp.ClientSession) -> None:
+    """Download a file from `url` and save it locally under `local_filename`."""
+    try:
+        async with session.get(url, headers=headers) as resp:
+            if resp.status == 200:
+                async with aiofiles.open(
+                    f"source/_static/covers/{name.replace(' ', '_')}.jpg", "wb"
+                ) as f:
+                    async for chunk in resp.content.iter_chunked(1024 * 1024):
+                        await asyncio.sleep(0.001)
+                        await f.write(chunk)
+            else:
+                raise RuntimeError(
+                    f"Cannot download {url} with status code {resp.status}"
+                )
+    except Exception as e:
+        LOGGER.error(f"Cannot download {url}: {e}")
 
 
 async def _get_cover_images(items):
@@ -155,8 +178,13 @@ async def _get_cover_images(items):
     async with aiohttp.ClientSession(timeout=timeout) as session:
         tasks = []
         for item in items:
-            if not item.get("image"):
+            image_path = Path(
+                f"source/_static/covers/{item['name'].replace(' ', '_')}.jpg"
+            )
+            if not item.get("image") and not image_path.exists():
                 tasks.append(_get_cover_image_worker(item, session))
+            else:
+                item["image"] = f"{GITHUB_URL}/{image_path}"
         await asyncio.gather(*tasks)
 
 
@@ -164,14 +192,15 @@ async def _get_cover_image_worker(item, session):
     default_cover = "https://raw.githubusercontent.com/ylab-hi/yanglab-guide/main/source/_static/book.svg"
     base_domain = "https://www.goodreads.com"
     search_domain = base_domain + "/search/"
-    header = {
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/100.0.4896.88 Safari/537.36 "
+    headers = {
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 "
+        "Safari/537.36",
+        "Connection": "keep-alive",
     }
 
     title = item["name"]
-    first_num = 4
-    async with session.get(search_domain, params={"q": title}, headers=header) as resp:
+    first_num = 2
+    async with session.get(search_domain, params={"q": title}, headers=headers) as resp:
         try:
             resp.raise_for_status()
         except Exception as e:
@@ -189,13 +218,22 @@ async def _get_cover_image_worker(item, session):
             assert len(cover_urls) == len(names)
 
             # fetch the first one
-            cover = await _fetch_image(session, base_domain + cover_urls[0], header)
+            cover = await _fetch_image(session, base_domain + cover_urls[0], headers)
 
             if not cover:
                 LOGGER.info(f"Failed to fetch {title} cover using default")
                 item["image"] = default_cover
             else:
-                item["image"] = cover[0]
+                LOGGER.info(f"Successfully fetched {title} cover {cover[0]}")
+                if (
+                    os.environ.get("READTHEDOCS") is None
+                    or os.environ.get("GITHUB_ACTIONS") is None
+                ):
+                    await download(cover[0], title, headers, session)
+                    item[
+                        "image"
+                    ] = f'{GITHUB_URL}/source/_static/covers/{title.replace(" ", "_")}.jpg'
+                item["image"] = cover[0]  # doesn't use  local image in read the docs
 
 
 async def _fetch_image(session, url, header):
