@@ -181,7 +181,7 @@ async def _get_cover_images(items):
             image_path = Path(
                 f"source/_static/covers/{item['name'].replace(' ', '_')}.jpg"
             )
-            if not item.get("image") and not image_path.exists():
+            if not image_path.exists():
                 tasks.append(_get_cover_image_worker(item, session))
             else:
                 item["image"] = f"{GITHUB_URL}/{image_path}"
@@ -224,16 +224,20 @@ async def _get_cover_image_worker(item, session):
                 LOGGER.info(f"Failed to fetch {title} cover using default")
                 item["image"] = default_cover
             else:
-                LOGGER.info(f"Successfully fetched {title} cover {cover[0]}")
+
                 if (
                     os.environ.get("READTHEDOCS") is None
-                    or os.environ.get("GITHUB_ACTIONS") is None
+                    and os.environ.get("GITHUB_ACTIONS") is None
                 ):
+                    # local build
                     await download(cover[0], title, headers, session)
+                    LOGGER.info(f"Successfully fetched {title} cover {cover[0]}")
                     item[
                         "image"
                     ] = f'{GITHUB_URL}/source/_static/covers/{title.replace(" ", "_")}.jpg'
-                item["image"] = cover[0]  # doesn't use  local image in read the docs
+                else:
+                    # doesn't use  local image in read the docs
+                    item["image"] = cover[0]
 
 
 async def _fetch_image(session, url, header):
