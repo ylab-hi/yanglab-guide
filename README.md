@@ -34,13 +34,14 @@ The repo contain content about yang's lab guide.
 
 ## 🚀 RoadMap
 
-- [x] Cover image of book from zlibrary
+- [x] ~~Cover image of book from zlibrary~~
+- [x] Use local cover image
 - [x] Amazon Link for Lab books
 - [ ] Development guide of Lab
 - [ ] Story behind Project
-- [ ] Cover image of books from Amazon
 - [ ] Python Development Guide
 - [ ] C++ Development Guide
+- [ ] Rust Development Guide
 
 ## 🤗 Contributing
 
