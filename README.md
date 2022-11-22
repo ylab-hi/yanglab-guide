@@ -34,7 +34,6 @@ The repo contain content about yang's lab guide.
 
 ## 🚀 RoadMap
 
-- [x] ~~Cover image of book from zlibrary~~
 - [x] Use local cover image
 - [x] Amazon Link for Lab books
 - [ ] Development guide of Lab
