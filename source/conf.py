@@ -271,7 +271,7 @@ def build_gallery(app: Sphinx):
     get_cover_images(books)
 
     for item in books:
-        star_num = 1 if not item.get("star") else int(item["star"])
+        star_num = 3 if not item.get("star") else int(item["star"])
         star_text = (
             f"![Star](https://img.shields.io/badge/Recommend-{star_num * star}-green)"
         )
