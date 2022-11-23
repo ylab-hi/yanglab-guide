@@ -189,7 +189,7 @@ async def _get_cover_images(items):
 
 
 async def _get_cover_image_worker(item, session):
-    default_cover = "https://raw.githubusercontent.com/ylab-hi/yanglab-guide/main/source/_static/book.svg"
+    default_cover = "https://raw.githubusercontent.com/ylab-hi/yanglab-guide/main/source/_static/book.jpg"
     base_domain = "https://www.goodreads.com"
     search_domain = base_domain + "/search/"
     headers = {
