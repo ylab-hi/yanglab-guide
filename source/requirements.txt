@@ -272,7 +272,7 @@ yarl==1.8.1
     # via
     #   -r source/requirements.txt
     #   aiohttp
-zipp==3.10.0
+zipp==3.11.0
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
