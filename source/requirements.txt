@@ -268,7 +268,7 @@ wheel==0.37.1
     # via
     #   -r source/requirements.txt
     #   sphinx-togglebutton
-yarl==1.8.1
+yarl==1.8.2
     # via
     #   -r source/requirements.txt
     #   aiohttp
