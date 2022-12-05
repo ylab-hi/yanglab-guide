@@ -264,7 +264,7 @@ watchdog==2.1.9
     # via
     #   -r source/requirements.txt
     #   ablog
-wheel==0.37.1
+wheel==0.38.4
     # via
     #   -r source/requirements.txt
     #   sphinx-togglebutton
