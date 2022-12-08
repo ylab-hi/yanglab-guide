@@ -124,7 +124,7 @@ multidict==6.0.3
     #   -r source/requirements.txt
     #   aiohttp
     #   yarl
-myst-parser==0.18.0
+myst-parser==0.18.1
     # via -r source/requirements.txt
 packaging==22.0
     # via
