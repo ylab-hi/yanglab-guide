@@ -126,7 +126,7 @@ multidict==6.0.3
     #   yarl
 myst-parser==0.18.0
     # via -r source/requirements.txt
-packaging==21.3
+packaging==22.0
     # via
     #   -r source/requirements.txt
     #   pydata-sphinx-theme
