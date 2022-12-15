@@ -143,24 +143,28 @@ bibtex_bibfiles = ["references.bib"]
 GITHUB_URL = "https://raw.githubusercontent.com/ylab-hi/yanglab-guide/main"
 
 
-def get_correct_source() -> Path:
+def get_img_path(name: str):
     """Get the correct source directory for the gallery."""
+    static_path = Path(f"_static/covers/{name.replace(' ', '_')}.jpg")
+    remote_image_path = f"{GITHUB_URL}/source/{static_path}"
+
     if Path("source").exists():
-        return Path("source")
+        local_image_path = Path(f"source/{static_path}")
     else:
-        return Path(".")
+        local_image_path = static_path
+
+    return local_image_path, remote_image_path
 
 
 def get_cover_images(items):
     default_cover = "https://raw.githubusercontent.com/ylab-hi/yanglab-guide/main/source/_static/book.jpg"
-    source = get_correct_source()
     for item in items:
-        image_path = source / f"_static/covers/{item['name'].replace(' ', '_')}.jpg"
-        if not image_path.exists():
-            LOGGER.warning(f"Cover image {image_path} does not exist")
+        local_image_path, remote_image_path = get_img_path(item["name"])
+        if not local_image_path.exists():
+            LOGGER.warning(f"Cover image {local_image_path} does not exist")
             item["image"] = default_cover
         else:
-            item["image"] = f"{GITHUB_URL}/{image_path}"
+            item["image"] = remote_image_path
 
 
 def build_gallery(app: Sphinx):
