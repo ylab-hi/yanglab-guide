@@ -9,8 +9,6 @@
 @time: 2022-12-15
 """
 
-import os
-import sys
 import re
 from pathlib import Path
 import asyncio

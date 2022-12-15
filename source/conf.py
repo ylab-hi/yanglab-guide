@@ -149,7 +149,7 @@ def get_cover_images(items):
         image_path = Path(f"source/_static/covers/{item['name'].replace(' ', '_')}.jpg")
         if not image_path.exists():
             LOGGER.warning(f"Cover image {image_path} does not exist")
-            item["cover"] = default_cover
+            item["image"] = default_cover
         else:
             item["image"] = f"{GITHUB_URL}/{image_path}"
 
@@ -157,6 +157,7 @@ def get_cover_images(items):
 def build_gallery(app: Sphinx):
     # Build the gallery file
     LOGGER.info("building gallery...")
+    LOGGER.info(f"current working directory: {Path.cwd()}")
     star = "⭐"
     grid_items = []
     books = yaml.safe_load((Path(app.srcdir) / "library.yml").read_text())
