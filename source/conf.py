@@ -143,10 +143,19 @@ bibtex_bibfiles = ["references.bib"]
 GITHUB_URL = "https://raw.githubusercontent.com/ylab-hi/yanglab-guide/main"
 
 
+def get_correct_source() -> Path:
+    """Get the correct source directory for the gallery."""
+    if Path("source").exists():
+        return Path("source")
+    else:
+        return Path(".")
+
+
 def get_cover_images(items):
     default_cover = "https://raw.githubusercontent.com/ylab-hi/yanglab-guide/main/source/_static/book.jpg"
+    source = get_correct_source()
     for item in items:
-        image_path = Path(f"source/_static/covers/{item['name'].replace(' ', '_')}.jpg")
+        image_path = source / f"_static/covers/{item['name'].replace(' ', '_')}.jpg"
         if not image_path.exists():
             LOGGER.warning(f"Cover image {image_path} does not exist")
             item["image"] = default_cover
