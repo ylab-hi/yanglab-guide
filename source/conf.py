@@ -15,23 +15,16 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 
-import asyncio
 import random
 
 # -- Project information -----------------------------------------------------
 from datetime import datetime
 from pathlib import Path
 from textwrap import dedent
-from typing import List
-import re
 
-import aiohttp
-import aiofiles
 import yaml
-from lxml import etree
 from sphinx.application import Sphinx
 from sphinx.util import logging
-import os
 
 LOGGER = logging.getLogger("conf")
 
@@ -151,112 +144,14 @@ GITHUB_URL = "https://raw.githubusercontent.com/ylab-hi/yanglab-guide/main"
 
 
 def get_cover_images(items):
-    asyncio.run(_get_cover_images(items))
-
-
-async def download(url, name, headers, session: aiohttp.ClientSession) -> None:
-    """Download a file from `url` and save it locally under `local_filename`."""
-    try:
-        async with session.get(url, headers=headers) as resp:
-            if resp.status == 200:
-                async with aiofiles.open(
-                    f"source/_static/covers/{name.replace(' ', '_')}.jpg", "wb"
-                ) as f:
-                    async for chunk in resp.content.iter_chunked(1024 * 1024):
-                        await asyncio.sleep(0.001)
-                        await f.write(chunk)
-            else:
-                raise RuntimeError(
-                    f"Cannot download {url} with status code {resp.status}"
-                )
-    except Exception as e:
-        LOGGER.error(f"Cannot download {url}: {e}")
-
-
-async def _get_cover_images(items):
-    timeout = aiohttp.client.ClientTimeout(2 * 60)
-    async with aiohttp.ClientSession(timeout=timeout) as session:
-        tasks = []
-        for item in items:
-            image_path = Path(
-                f"source/_static/covers/{item['name'].replace(' ', '_')}.jpg"
-            )
-            if not image_path.exists():
-                tasks.append(_get_cover_image_worker(item, session))
-            else:
-                item["image"] = f"{GITHUB_URL}/{image_path}"
-        await asyncio.gather(*tasks)
-
-
-async def _get_cover_image_worker(item, session):
     default_cover = "https://raw.githubusercontent.com/ylab-hi/yanglab-guide/main/source/_static/book.jpg"
-    base_domain = "https://www.goodreads.com"
-    search_domain = base_domain + "/search/"
-    headers = {
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 "
-        "Safari/537.36",
-        "Connection": "keep-alive",
-    }
-
-    title = item["name"]
-    first_num = 2
-    async with session.get(search_domain, params={"q": title}, headers=headers) as resp:
-        try:
-            resp.raise_for_status()
-        except Exception as e:
-            LOGGER.info(f"Failed to fetch {title} cover using default\n{e.args}")
-            item["image"] = default_cover
+    for item in items:
+        image_path = Path(f"source/_static/covers/{item['name'].replace(' ', '_')}.jpg")
+        if not image_path.exists():
+            LOGGER.warning(f"Cover image {image_path} does not exist")
+            item["cover"] = default_cover
         else:
-            tree = etree.HTML(await resp.text())
-
-            cover_urls: List[str] = tree.xpath(
-                f"//table[@class='tableList']//tr[position()<{first_num}]//a[@class='bookTitle']/@href"
-            )
-            names: List[str] = tree.xpath(
-                f"//table[@class='tableList']//tr[position()<{first_num}]//td/a/@title"
-            )
-            assert len(cover_urls) == len(names)
-
-            # fetch the first one
-            cover = await _fetch_image(session, base_domain + cover_urls[0], headers)
-
-            if not cover:
-                LOGGER.info(f"Failed to fetch {title} cover using default")
-                item["image"] = default_cover
-            else:
-
-                if (
-                    os.environ.get("READTHEDOCS") is None
-                    and os.environ.get("GITHUB_ACTIONS") is None
-                ):
-                    # local build
-                    await download(cover[0], title, headers, session)
-                    LOGGER.info(f"Successfully fetched {title} cover {cover[0]}")
-                    item[
-                        "image"
-                    ] = f'{GITHUB_URL}/source/_static/covers/{title.replace(" ", "_")}.jpg'
-                else:
-                    # doesn't use  local image in read the docs
-                    item["image"] = cover[0]
-
-
-async def _fetch_image(session, url, header):
-    cover = []
-    async with session.get(url, headers=header) as resp:
-        try:
-            resp.raise_for_status()
-        except Exception as e:
-            LOGGER.info(f"Failed to fetch image cover from {url} \n{e.args}")
-            return cover
-        else:
-            t = await resp.text()
-            tree = etree.HTML(t)
-            cover.extend(tree.xpath("//img[@id='coverImage']/@src"))
-
-            if not cover:
-                pat = re.compile(r"<img id=\"coverImage\" .+? src=\"(.+)\" />")
-                cover.extend(re.findall(pat, t))
-            return cover
+            item["image"] = f"{GITHUB_URL}/{image_path}"
 
 
 def build_gallery(app: Sphinx):
