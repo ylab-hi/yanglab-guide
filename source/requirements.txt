@@ -187,7 +187,7 @@ soupsieve==2.3.2.post1
     # via
     #   -r source/requirements.txt
     #   beautifulsoup4
-sphinx==4.5.0
+sphinx==6.0.0
     # via
     #   -r source/requirements.txt
     #   ablog
