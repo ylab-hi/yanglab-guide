@@ -79,7 +79,7 @@ importlib-metadata==6.0.0
     # via
     #   sphinx
     #   sphinxcontrib-bibtex
-invoke==1.7.3
+invoke==2.0.0
     # via
     #   -r source/requirements.txt
     #   ablog
