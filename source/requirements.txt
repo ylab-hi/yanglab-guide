@@ -107,7 +107,7 @@ markdown-it-py==2.1.0
     #   -r source/requirements.txt
     #   mdit-py-plugins
     #   myst-parser
-markupsafe==2.1.1
+markupsafe==2.1.2
     # via
     #   -r source/requirements.txt
     #   jinja2
