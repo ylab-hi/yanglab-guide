@@ -224,7 +224,7 @@ sphinxcontrib-devhelp==1.0.2
     # via
     #   -r source/requirements.txt
     #   sphinx
-sphinxcontrib-htmlhelp==2.0.0
+sphinxcontrib-htmlhelp==2.0.1
     # via
     #   -r source/requirements.txt
     #   sphinx
