@@ -30,7 +30,7 @@ babel==2.11.0
     # via
     #   -r source/requirements.txt
     #   sphinx
-beautifulsoup4==4.11.1
+beautifulsoup4==4.11.2
     # via
     #   -r source/requirements.txt
     #   pydata-sphinx-theme
