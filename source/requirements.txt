@@ -6,7 +6,7 @@
 #
 ablog==0.10.33
     # via -r source/requirements.txt
-aiofiles==22.1.0
+aiofiles==23.1.0
     # via -r source/requirements.txt
 aiohttp==3.8.3
     # via -r source/requirements.txt
