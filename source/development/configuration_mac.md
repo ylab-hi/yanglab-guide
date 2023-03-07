@@ -458,7 +458,6 @@ My config files and installation commands are kept in GitHub.
 - [Docker] is a tool to create a safe environment for development or production
 - [Chrome] There is no reason not to use it. :heart:
 - [IINA] Great tool that is used to play video
-- [Imagine] Compress images before you upload somewhere. light and powerful!
 - [Office] :smile:
 - [MonitorControl] It manages brightness and sound for different monitors
 - [Monodraw] A tool is used to design fancy ASCII strings
@@ -501,7 +500,6 @@ My config files and installation commands are kept in GitHub.
 [homebrew]: https://brew.sh/
 [hyperfine]: https://github.com/sharkdp/hyperfine/
 [iina]: https://iina.io/
-[imagine]: https://www.electronjs.org/apps/imagine
 [ishot]: https://apps.apple.com/cn/app/ishot-%E4%BC%98%E7%A7%80%E7%9A%84%E6%88%AA%E5%9B%BE%E5%BD%95%E5%B1%8F%E5%B7%A5%E5%85%B7/id1485844094?mt=12
 [iterm2]: https://iterm2.com
 [lunarvim]: https://github.com/LunarVim/LunarVim
