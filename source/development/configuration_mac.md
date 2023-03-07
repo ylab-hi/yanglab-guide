@@ -402,9 +402,9 @@ These tools offer a lot of flexibility, so don't be afraid to experiment and fin
 
 Alternative combination:
 
-- ~~[Magnet]~~ A tool is used to manage windows for different applications
-- ~~[Rectangle]~~ A tool to move and resize windows in macOS
-- ~~[AltTab]~~ is a good tool to manage windows for different applications
+- [Magnet] A tool is used to manage windows for different applications
+- [Rectangle] A tool to move and resize windows in macOS
+- [AltTab] is a good tool to manage windows for different applications
 
 ## 6. Editor
 
@@ -473,7 +473,6 @@ My config files and installation commands are kept in GitHub.
 - [SoundSource] can help you get truly powerful control over all the audio
 - [Reeder 5] A RSS reader and keep control of your reading
 - [Notion] A excellent notion tool
-- ~~[One Switch]~~ can help you finish some progress like keep awake and hide icons on one button
 - [iShot] A great tool to take screenshots
 - [Google Drive] is a cloud storage service that allows you to store and share files with anyone
 - [Ferdi] can integrate other tools like Gmail, Slack, or others to allow you manage information in one place

@@ -54,5 +54,7 @@
 - name: Computational Exome and Genome Analysis
 - name: All Statistics A concise Course in Statistical Inference
 - name: How the NIH Can Help You Get Funded
-- name: Rust for Rustaceans: Idiomatic Programming for Experienced Developers 
-- name: Rust Atomics and Locks: Low-Level Concurrency in Practice
+- name: Rust for Rustaceans Idiomatic Programming for Experienced Developers
+  star: 5
+- name: Rust Atomics and Locks Low-Level Concurrency in Practice
+  star: 5
