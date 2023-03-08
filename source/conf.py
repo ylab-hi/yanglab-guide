@@ -123,7 +123,7 @@ html_theme_options = {
     "use_issues_button": True,
     "use_repository_button": True,
     "use_download_button": True,
-    "logo_only": True,
+    # "logo_only": True,
     "show_toc_level": 2,
     # "announcement": (
     #     "⚠️The Lab Guide of Yang Lab, "

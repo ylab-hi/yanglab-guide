@@ -113,8 +113,18 @@ async def _fetch_image(session, url, header):
             cover.extend(tree.xpath("//img[@id='coverImage']/@src"))
 
             if not cover:
-                pat = re.compile(r"<img id=\"coverImage\" .+? src=\"(.+)\" />")
+                # use Beautiful Soup
+                from bs4 import BeautifulSoup
+
+                soup = BeautifulSoup(t, "html.parser")
+
+                tag = soup.find("img", {"class": "ResponsiveImage"})
+                cover.append(tag.get("src"))
+
+            if not cover:
+                pat = re.compile(r"<img \n+ id=\"coverImage\" .+? src=\"(.+)\" />")
                 cover.extend(re.findall(pat, t))
+
             return cover
 
 

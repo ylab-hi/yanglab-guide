@@ -402,9 +402,9 @@ These tools offer a lot of flexibility, so don't be afraid to experiment and fin
 
 Alternative combination:
 
-- ~~[Magnet]~~ A tool is used to manage windows for different applications
-- ~~[Rectangle]~~ A tool to move and resize windows in macOS
-- ~~[AltTab]~~ is a good tool to manage windows for different applications
+- [Magnet] A tool is used to manage windows for different applications
+- [Rectangle] A tool to move and resize windows in macOS
+- [AltTab] is a good tool to manage windows for different applications
 
 ## 6. Editor
 
@@ -458,7 +458,6 @@ My config files and installation commands are kept in GitHub.
 - [Docker] is a tool to create a safe environment for development or production
 - [Chrome] There is no reason not to use it. :heart:
 - [IINA] Great tool that is used to play video
-- [Imagine] Compress images before you upload somewhere. light and powerful!
 - [Office] :smile:
 - [MonitorControl] It manages brightness and sound for different monitors
 - [Monodraw] A tool is used to design fancy ASCII strings
@@ -473,7 +472,6 @@ My config files and installation commands are kept in GitHub.
 - [SoundSource] can help you get truly powerful control over all the audio
 - [Reeder 5] A RSS reader and keep control of your reading
 - [Notion] A excellent notion tool
-- ~~[One Switch]~~ can help you finish some progress like keep awake and hide icons on one button
 - [iShot] A great tool to take screenshots
 - [Google Drive] is a cloud storage service that allows you to store and share files with anyone
 - [Ferdi] can integrate other tools like Gmail, Slack, or others to allow you manage information in one place
@@ -502,7 +500,6 @@ My config files and installation commands are kept in GitHub.
 [homebrew]: https://brew.sh/
 [hyperfine]: https://github.com/sharkdp/hyperfine/
 [iina]: https://iina.io/
-[imagine]: https://www.electronjs.org/apps/imagine
 [ishot]: https://apps.apple.com/cn/app/ishot-%E4%BC%98%E7%A7%80%E7%9A%84%E6%88%AA%E5%9B%BE%E5%BD%95%E5%B1%8F%E5%B7%A5%E5%85%B7/id1485844094?mt=12
 [iterm2]: https://iterm2.com
 [lunarvim]: https://github.com/LunarVim/LunarVim
