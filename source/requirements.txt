@@ -4,7 +4,7 @@
 #
 #    pip-compile --resolver=backtracking source/requirements.txt
 #
-ablog==0.10.33.post1
+ablog==0.11.1
     # via -r source/requirements.txt
 accessible-pygments==0.0.4
     # via
