@@ -248,7 +248,7 @@ sphinx-autobuild==2021.3.14
     # via -r source/requirements.txt
 sphinx-book-theme==1.0.0
     # via -r source/requirements.txt
-sphinx-copybutton==0.5.1
+sphinx-copybutton==0.5.2
     # via -r source/requirements.txt
 sphinx-design==0.3.0
     # via -r source/requirements.txt
