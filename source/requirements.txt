@@ -284,7 +284,7 @@ sphinxcontrib-serializinghtml==1.1.5
     #   sphinx
 sphinxcontrib-youtube==1.2.0
     # via -r source/requirements.txt
-sphinxext-opengraph==0.8.1
+sphinxext-opengraph==0.8.2
     # via -r source/requirements.txt
 tornado==6.3
     # via
