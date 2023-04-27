@@ -209,7 +209,7 @@ pyyaml==6.0
     #   -r source/requirements.txt
     #   myst-parser
     #   pybtex
-requests==2.28.2
+requests==2.29.0
     # via
     #   -r source/requirements.txt
     #   sphinx
