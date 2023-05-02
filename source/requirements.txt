@@ -118,7 +118,7 @@ latexcodec==2.0.1
     # via
     #   -r source/requirements.txt
     #   pybtex
-linkify-it-py==2.0.0
+linkify-it-py==2.0.2
     # via -r source/requirements.txt
 livereload==2.6.3
     # via
