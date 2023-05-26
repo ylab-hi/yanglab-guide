@@ -290,7 +290,7 @@ tornado==6.3.2
     # via
     #   -r source/requirements.txt
     #   livereload
-typing-extensions==4.6.1
+typing-extensions==4.6.2
     # via -r source/requirements.txt
 uc-micro-py==1.0.2
     # via
