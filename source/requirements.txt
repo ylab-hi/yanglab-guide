@@ -128,7 +128,7 @@ lxml==4.9.2
     # via
     #   -r source/requirements.txt
     #   feedgen
-markdown-it-py==2.2.0
+markdown-it-py==3.0.0
     # via
     #   -r source/requirements.txt
     #   mdit-py-plugins
