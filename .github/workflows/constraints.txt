@@ -1,5 +1,5 @@
 pip==23.1.2
-cookiecutter==2.2.0
+cookiecutter==2.2.2
 cutty==0.18.0
 nox==2023.4.22
 nox-poetry==1.0.3
