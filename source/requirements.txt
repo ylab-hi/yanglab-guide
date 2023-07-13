@@ -101,7 +101,7 @@ importlib-resources==6.0.0
     # via
     #   -r source/requirements.txt
     #   matplotlib
-invoke==2.1.3
+invoke==2.2.0
     # via
     #   -r source/requirements.txt
     #   ablog
