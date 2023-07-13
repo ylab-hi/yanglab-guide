@@ -78,7 +78,7 @@ fonttools==4.41.1
     # via
     #   -r source/requirements.txt
     #   matplotlib
-frozenlist==1.3.1
+frozenlist==1.4.0
     # via
     #   -r source/requirements.txt
     #   aiohttp
