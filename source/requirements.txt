@@ -10,7 +10,7 @@ accessible-pygments==0.0.4
     # via
     #   -r source/requirements.txt
     #   pydata-sphinx-theme
-aiofiles==23.1.0
+aiofiles==23.2.1
     # via -r source/requirements.txt
 aiohttp==3.8.5
     # via -r source/requirements.txt
