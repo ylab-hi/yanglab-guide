@@ -256,7 +256,7 @@ sphinx-thebe==0.2.1
     # via -r source/requirements.txt
 sphinx-togglebutton==0.3.2
     # via -r source/requirements.txt
-sphinxcontrib-applehelp==1.0.4
+sphinxcontrib-applehelp==1.0.6
     # via
     #   -r source/requirements.txt
     #   sphinx
