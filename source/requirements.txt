@@ -278,7 +278,7 @@ sphinxcontrib-qthelp==1.0.3
     # via
     #   -r source/requirements.txt
     #   sphinx
-sphinxcontrib-serializinghtml==1.1.5
+sphinxcontrib-serializinghtml==1.1.8
     # via
     #   -r source/requirements.txt
     #   sphinx
