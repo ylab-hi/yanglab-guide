@@ -137,7 +137,7 @@ markupsafe==2.1.2
     # via
     #   -r source/requirements.txt
     #   jinja2
-matplotlib==3.7.1
+matplotlib==3.7.3
     # via
     #   -r source/requirements.txt
     #   sphinxext-opengraph
