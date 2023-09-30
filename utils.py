@@ -23,6 +23,18 @@ LOGGER = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
 
+def format_title(title: str):
+    """Format title to be used in the URL.
+
+    .. example::
+        >>> format_title('The Art of Computer Programming, Volume 1: Fundamental Algorithms (3rd Edition)')
+        'The Art of Computer Programming, Volume 1: Fundamental Algorithms'
+    """
+
+    title = title.rsplit("(")[0].strip()
+    return title
+
+
 def get_cover_images(items):
     asyncio.run(_get_cover_images(items))
 
@@ -89,12 +101,13 @@ async def _get_cover_image_worker(item, session):
             )
             assert len(cover_urls) == len(names)
 
-            # fetch the first one
-            cover = await _fetch_image(session, base_domain + cover_urls[0], headers)
-
-            if not cover:
+            if not cover_urls:
                 LOGGER.info(f"Failed to fetch {title} cover using default")
             else:
+                # fetch the first one
+                cover = await _fetch_image(
+                    session, base_domain + cover_urls[0], headers
+                )
                 await download(cover[0], title, headers, session)
                 LOGGER.info(f"Successfully fetched {title} cover {cover[0]}")
 
@@ -119,6 +132,7 @@ async def _fetch_image(session, url, header):
                 soup = BeautifulSoup(t, "html.parser")
 
                 tag = soup.find("img", {"class": "ResponsiveImage"})
+
                 cover.append(tag.get("src"))
 
             if not cover:
