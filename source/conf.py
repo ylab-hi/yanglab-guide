@@ -161,7 +161,7 @@ def get_cover_images(items):
     for item in items:
         local_image_path, remote_image_path = get_img_path(item["name"])
         if not local_image_path.exists():
-            LOGGER.warning(f"Cover image {local_image_path} does not exist")
+            LOGGER.info(f"Cover image {local_image_path} does not exist")
             item["image"] = default_cover
         else:
             item["image"] = remote_image_path
