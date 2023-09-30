@@ -306,7 +306,7 @@ It's designed to be fast, flexible, and easy to use, with a simple command-line 
 
 <!-- {{< figure src="https://github.com/topgrade-rs/topgrade/raw/master/doc/screenshot.gif" width=500 >}} -->
 
-![topgrade](https://github.com/topgrade-rs/topgrade/raw/master/doc/screenshot.gif)
+![topgrade](https://github.com/topgrade-rs/topgrade/blob/main/doc/screenshot.gif)
 
 Here's how to get started with Topgrade:
 
