@@ -491,7 +491,7 @@ My config files and installation commands are kept in GitHub.
 [clion]: https://www.jetbrains.com/clion/
 [conda]: https://docs.conda.io/en/latest/
 [default folder x]: https://www.stclairsoft.com/DefaultFolderX/
-[docker]: https://www.docker.com/?utm_source=google&utm_medium=cpc&utm_campaign=dockerhomepage&utm_content=namer&utm_term=dockerhomepage&utm_budget=growth&gclid=Cj0KCQiAy4eNBhCaARIsAFDVtI1yYmAI5cysoIDN2Vbhs5tplap41qP5MKKybSNbg9nTCA8oPe2yeXAaAofgEALw_wcB
+[docker]: https://www.docker.com/
 [dust]: https://github.com/bootandy/dust
 [ferdi]: https://ferdium.org/
 [fish]: https://fishshell.com/
