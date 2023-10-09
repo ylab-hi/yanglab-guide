@@ -56,7 +56,7 @@ contourpy==1.1.1
     # via
     #   -r source/requirements.txt
     #   matplotlib
-cycler==0.11.0
+cycler==0.12.1
     # via
     #   -r source/requirements.txt
     #   matplotlib
