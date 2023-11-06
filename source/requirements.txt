@@ -74,7 +74,7 @@ feedgen==0.9.0
     # via
     #   -r source/requirements.txt
     #   ablog
-fonttools==4.43.1
+fonttools==4.44.0
     # via
     #   -r source/requirements.txt
     #   matplotlib
