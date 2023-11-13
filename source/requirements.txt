@@ -156,7 +156,7 @@ multidict==6.0.4
     #   yarl
 myst-parser==1.0.0
     # via -r source/requirements.txt
-numpy==1.24.3
+numpy==1.26.2
     # via
     #   -r source/requirements.txt
     #   contourpy
