@@ -18,7 +18,7 @@ aiosignal==1.3.1
     # via
     #   -r source/requirements.txt
     #   aiohttp
-alabaster==0.7.13
+alabaster==0.7.16
     # via
     #   -r source/requirements.txt
     #   sphinx
