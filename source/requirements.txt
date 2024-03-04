@@ -194,7 +194,7 @@ pyparsing==3.1.1
     # via
     #   -r source/requirements.txt
     #   matplotlib
-python-dateutil==2.8.2
+python-dateutil==2.9.0.post0
     # via
     #   -r source/requirements.txt
     #   ablog
