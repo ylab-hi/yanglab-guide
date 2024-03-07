@@ -114,7 +114,7 @@ kiwisolver==1.4.5
     # via
     #   -r source/requirements.txt
     #   matplotlib
-latexcodec==2.0.1
+latexcodec==3.0.0
     # via
     #   -r source/requirements.txt
     #   pybtex
