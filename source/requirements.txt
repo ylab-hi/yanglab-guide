@@ -154,7 +154,7 @@ multidict==6.0.5
     #   -r source/requirements.txt
     #   aiohttp
     #   yarl
-myst-parser==1.0.0
+myst-parser==3.0.1
     # via -r source/requirements.txt
 numpy==1.24.3
     # via
