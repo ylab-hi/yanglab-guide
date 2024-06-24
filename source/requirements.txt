@@ -120,7 +120,7 @@ latexcodec==3.0.0
     #   pybtex
 linkify-it-py==2.0.3
     # via -r source/requirements.txt
-livereload==2.6.3
+livereload==2.7.0
     # via
     #   -r source/requirements.txt
     #   sphinx-autobuild
