@@ -26,7 +26,7 @@ async-timeout==4.0.3
     # via
     #   -r source/requirements.txt
     #   aiohttp
-attrs==23.1.0
+attrs==24.1.0
     # via
     #   -r source/requirements.txt
     #   aiohttp
