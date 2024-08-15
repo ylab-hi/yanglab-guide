@@ -97,7 +97,7 @@ importlib-metadata==8.2.0
     #   -r source/requirements.txt
     #   sphinx
     #   sphinxcontrib-bibtex
-importlib-resources==6.3.2
+importlib-resources==6.4.2
     # via
     #   -r source/requirements.txt
     #   matplotlib
