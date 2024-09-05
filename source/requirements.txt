@@ -308,7 +308,7 @@ wheel==0.44.0
     # via
     #   -r source/requirements.txt
     #   sphinx-togglebutton
-yarl==1.9.2
+yarl==1.9.11
     # via
     #   -r source/requirements.txt
     #   aiohttp
