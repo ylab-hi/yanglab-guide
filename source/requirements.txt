@@ -83,7 +83,7 @@ frozenlist==1.4.0
     #   -r source/requirements.txt
     #   aiohttp
     #   aiosignal
-idna==3.8
+idna==3.10
     # via
     #   -r source/requirements.txt
     #   requests
