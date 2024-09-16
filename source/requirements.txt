@@ -312,7 +312,7 @@ yarl==1.11.1
     # via
     #   -r source/requirements.txt
     #   aiohttp
-zipp==3.20.1
+zipp==3.20.2
     # via
     #   -r source/requirements.txt
     #   importlib-metadata
