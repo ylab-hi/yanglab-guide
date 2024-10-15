@@ -300,7 +300,7 @@ urllib3==2.2.3
     # via
     #   -r source/requirements.txt
     #   requests
-watchdog==4.0.2
+watchdog==5.0.3
     # via
     #   -r source/requirements.txt
     #   ablog
