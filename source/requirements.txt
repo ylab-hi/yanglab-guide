@@ -22,7 +22,7 @@ alabaster==0.7.13
     # via
     #   -r source/requirements.txt
     #   sphinx
-async-timeout==4.0.3
+async-timeout==5.0.0
     # via
     #   -r source/requirements.txt
     #   aiohttp
