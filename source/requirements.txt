@@ -39,7 +39,7 @@ beautifulsoup4==4.12.3
     # via
     #   -r source/requirements.txt
     #   pydata-sphinx-theme
-certifi==2024.8.30
+certifi==2024.12.14
     # via
     #   -r source/requirements.txt
     #   requests
