@@ -200,7 +200,7 @@ python-dateutil==2.9.0.post0
     #   ablog
     #   feedgen
     #   matplotlib
-pytz==2024.2
+pytz==2025.1
     # via
     #   -r source/requirements.txt
     #   babel
