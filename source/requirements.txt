@@ -30,7 +30,7 @@ attrs==25.1.0
     # via
     #   -r source/requirements.txt
     #   aiohttp
-babel==2.16.0
+babel==2.17.0
     # via
     #   -r source/requirements.txt
     #   pydata-sphinx-theme
