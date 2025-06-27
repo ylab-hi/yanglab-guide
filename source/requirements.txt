@@ -124,7 +124,7 @@ livereload==2.7.1
     # via
     #   -r source/requirements.txt
     #   sphinx-autobuild
-lxml==5.4.0
+lxml==6.0.0
     # via
     #   -r source/requirements.txt
     #   feedgen
