@@ -171,7 +171,7 @@ pillow==10.4.0
     # via
     #   -r source/requirements.txt
     #   matplotlib
-pybtex==0.25.0
+pybtex==0.25.1
     # via
     #   -r source/requirements.txt
     #   pybtex-docutils
