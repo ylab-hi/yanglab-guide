@@ -260,7 +260,7 @@ sphinxcontrib-applehelp==1.0.4
     # via
     #   -r source/requirements.txt
     #   sphinx
-sphinxcontrib-bibtex==2.6.3
+sphinxcontrib-bibtex==2.6.5
     # via -r source/requirements.txt
 sphinxcontrib-devhelp==1.0.2
     # via
