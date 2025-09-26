@@ -204,7 +204,7 @@ pytz==2025.2
     # via
     #   -r source/requirements.txt
     #   babel
-pyyaml==6.0.2
+pyyaml==6.0.3
     # via
     #   -r source/requirements.txt
     #   myst-parser
