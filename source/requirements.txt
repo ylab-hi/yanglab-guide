@@ -52,7 +52,7 @@ colorama==0.4.6
     # via
     #   -r source/requirements.txt
     #   sphinx-autobuild
-contourpy==1.1.1
+contourpy==1.3.3
     # via
     #   -r source/requirements.txt
     #   matplotlib
