@@ -141,7 +141,7 @@ matplotlib==3.7.3
     # via
     #   -r source/requirements.txt
     #   sphinxext-opengraph
-mdit-py-plugins==0.3.5
+mdit-py-plugins==0.5.0
     # via
     #   -r source/requirements.txt
     #   myst-parser
