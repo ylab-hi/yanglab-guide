@@ -60,7 +60,7 @@ cycler==0.12.1
     # via
     #   -r source/requirements.txt
     #   matplotlib
-docutils==0.17.1
+docutils==0.22.4
     # via
     #   -r source/requirements.txt
     #   ablog
