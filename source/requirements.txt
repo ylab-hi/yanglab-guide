@@ -190,7 +190,7 @@ pygments==2.19.2
     #   accessible-pygments
     #   pydata-sphinx-theme
     #   sphinx
-pyparsing==3.1.4
+pyparsing==3.3.1
     # via
     #   -r source/requirements.txt
     #   matplotlib
