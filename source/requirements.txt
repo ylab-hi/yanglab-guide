@@ -167,7 +167,7 @@ packaging==24.1
     #   matplotlib
     #   pydata-sphinx-theme
     #   sphinx
-pillow==10.4.0
+pillow==12.1.0
     # via
     #   -r source/requirements.txt
     #   matplotlib
