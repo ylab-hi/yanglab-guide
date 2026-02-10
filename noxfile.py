@@ -1,4 +1,5 @@
 """Nox sessions."""
+
 import shutil
 from pathlib import Path
 
@@ -41,7 +42,7 @@ def publish_release(session: Session) -> None:
 nox.options.sessions = ["linkcheck"]
 
 
-@nox.session
+@nox.session(venv_backend="uv")
 def docs(session: Session) -> None:
     """Build the documentation."""
     args = session.posargs or ["-W", "-n", "source", "source/_build"]
@@ -53,7 +54,8 @@ def docs(session: Session) -> None:
     if builddir.exists():
         shutil.rmtree(builddir)
 
-    session.install("-r", "source/requirements.txt")
+    # Install dependencies from pyproject.toml into nox's venv
+    session.run("uv", "pip", "install", "-r", "pyproject.toml", external=True)
 
     if session.interactive:
         session.run("sphinx-autobuild", *args)
@@ -61,9 +63,9 @@ def docs(session: Session) -> None:
         session.run("sphinx-build", *args)
 
 
-@nox.session
+@nox.session(venv_backend="uv")
 def linkcheck(session: Session) -> None:
-    """Build the documentation."""
+    """Check documentation links."""
     args = session.posargs or [
         "-b",
         "linkcheck",
@@ -77,7 +79,8 @@ def linkcheck(session: Session) -> None:
     if builddir.exists():
         shutil.rmtree(builddir)
 
-    session.install("-r", "source/requirements.txt")
+    # Install dependencies from pyproject.toml into nox's venv
+    session.run("uv", "pip", "install", "-r", "pyproject.toml", external=True)
 
     session.run("sphinx-build", *args)
 

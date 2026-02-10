@@ -6,12 +6,16 @@ jobs:
     name: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/setup-python@v6
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: Set up Python
+        uses: actions/setup-python@v6
         with:
           python-version: "3.9"
-      - run: |
-          pip install --constraint=.github/workflows/constraints.txt pip
-          pip install --constraint=.github/workflows/constraints.txt pre-commit
+      - name: Install pre-commit
+        run: uv tool install pre-commit
       - name: Compute cache key prefix
         if: matrix.os != 'windows-latest'
         id: cache_key_prefix
@@ -33,4 +37,4 @@ jobs:
           key: ${{ steps.cache_key_prefix.outputs.result }}-${{ hashFiles('.pre-commit-config.yaml') }}
           restore-keys: |
             ${{ steps.cache_key_prefix.outputs.result }}-
-      - run: pre-commit run --all-files --show-diff-on-failure --color=always
+      - run: uvx pre-commit run --all-files --show-diff-on-failure --color=always

@@ -62,10 +62,10 @@ Here's how to get started with [Homebrew]:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-3. You may be prompted to enter your password during the installation process.
+1. You may be prompted to enter your password during the installation process.
    This is normal and required to give Homebrew the necessary permissions to install software on your system.
 
-4. Once the installation is complete, you can start using Homebrew to install software packages.
+2. Once the installation is complete, you can start using Homebrew to install software packages.
    For example, if you want to install the popular text editor `vim` you can simply type the following command into the Terminal window:
 
 ```bash
@@ -74,7 +74,7 @@ brew install vim
 
 Homebrew will then download and install the latest version of ``vim, along with any dependencies that it requires.
 
-5. To update Homebrew itself and all installed packages, use the following command:
+1. To update Homebrew itself and all installed packages, use the following command:
 
 ```bash
 brew update && brew upgrade
@@ -113,8 +113,8 @@ brew install --cask alacritty
 
 This command will install [Alacritty] and all of its dependencies on your system.
 
-3. Once the installation is complete, you can launch Alacritty by typing "alacritty" in the Terminal window.
-4. By default, Alacritty uses a simple and minimalistic configuration.
+1. Once the installation is complete, you can launch Alacritty by typing "alacritty" in the Terminal window.
+2. By default, Alacritty uses a simple and minimalistic configuration.
    However, you can customize it by creating a configuration file at the following location:
 
 ```bash
@@ -173,10 +173,10 @@ Here's how to get started with [Fish] on macOS:
 brew install fish
 ```
 
-3. Once the installation is complete, you can launch Fish by typing "fish" in the Terminal window.
+1. Once the installation is complete, you can launch Fish by typing "fish" in the Terminal window.
    This will start a new Fish shell session.
 
-4. By default, Fish uses a simple and minimalistic configuration.
+2. By default, Fish uses a simple and minimalistic configuration.
    However, you can customize it by creating a configuration file at the following location:
 
 ```bash
@@ -187,7 +187,7 @@ Fish has plugins system as well, and I use [fisher] to manage plugins.
 Here, you can set things like the prompt, aliases, and other preferences to suit your needs.
 You can find more information on how to customize Fish on the official website or in the documentation.
 
-5. One of the unique features of Fish is its auto-suggestion system, which suggests commands as you type based on your command history.
+1. One of the unique features of Fish is its auto-suggestion system, which suggests commands as you type based on your command history.
    This can save you time and effort when working with the command line.
 
 Overall, Fish is an excellent choice for users who want a modern and user-friendly command-line shell that's easy to use and highly customizable.
@@ -500,7 +500,6 @@ My config files and installation commands are kept in GitHub.
 [iina]: https://iina.io/
 [ishot]: https://apps.apple.com/cn/app/ishot-%E4%BC%98%E7%A7%80%E7%9A%84%E6%88%AA%E5%9B%BE%E5%BD%95%E5%B1%8F%E5%B7%A5%E5%85%B7/id1485844094?mt=12
 [iterm2]: https://iterm2.com
-[lunarvim]: https://github.com/LunarVim/LunarVim
 [magnet]: https://apps.apple.com/us/app/magnet/id441258766?mt=12
 [mamba]: https://mamba.readthedocs.io/en/latest/
 [micromamba]: https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html
@@ -510,23 +509,17 @@ My config files and installation commands are kept in GitHub.
 [neovim]: https://neovim.io/
 [notion]: https://www.notion.so/product
 [office]: https://www.office.com/
-[one switch]: https://fireball.studio/oneswitch
 [pdf expert]: https://pdfexpert.com/?utm_source=google&utm_medium=cpc&utm_campaign=brand-hp&utm_google-campaign=brand-hp&utm_content=264692671625&utm_term=pdf%20expert&gclid=Cj0KCQiAy4eNBhCaARIsAFDVtI2Mb-84Xo5XJBQWkPHxGL-G11BnR8iF65B4kGDm2huhRRUa0wJy5VMaAjoREALw_wcB
-[picgo]: https://picgo.github.io/PicGo-Doc/en/guide/
+[picgo]: https://docs.picgo.app
 [pycharm]: https://www.jetbrains.com/pycharm/
 [rectangle]: https://rectangleapp.com/
 [reeder 5]: https://reederapp.com/
-[rust]: https://www.rust-lang.org/
 [snippetslab]: https://www.renfei.org/snippets-lab/
 [soundsource]: https://rogueamoeba.com/soundsource/
-[spacevim]: https://www.google.com/search?q=spacevim
 [time sink]: https://manytricks.com/timesink/
-[tldr]: https://tldr.sh/
 [tmux]: https://github.com/tmux/tmux/wiki
-[tmuxinator]: https://github.com/tmuxinator/tmuxinator
 [transmit]: https://panic.com/transmit/
 [tree]: https://www.geeksforgeeks.org/tree-command-unixlinux/
-[vim]: https://vimawesome.com/
 [vs code]: https://code.visualstudio.com/
 [xcode]: https://developer.apple.com/xcode/
 [xmind]: https://www.xmind.net/download/
@@ -535,7 +528,6 @@ My config files and installation commands are kept in GitHub.
 [zotero]: https://www.zotero.org/
 [zsh]: https://ohmyz.sh/
 [fisher]: https://github.com/jorgebucaran/fisher
-[another blog]: ../012-make-a-powerful-ternimal
 [ouch]: https://github.com/ouch-org/ouch
 [topgrade]: https://github.com/topgrade-rs/topgrade
 [imagemagick]: https://github.com/imagemagick/imagemagick

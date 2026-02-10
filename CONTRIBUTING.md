@@ -37,18 +37,42 @@ Request features on the [Issue Tracker].
 
 # How to set up your development environment
 
-Install the package with development requirements:
+You need to have [uv](https://docs.astral.sh/uv/) installed. If you don't have it yet:
 
 ```console
-$ pip install -r requirements.txt
+$ curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Then set up the development environment:
+
+```console
+$ make setup
+```
+
+Or manually:
+
+```console
+$ uv sync --all-extras
 ```
 
 # How to build the project
 
-Run the full test suite:
+Build the documentation:
 
 ```console
-$ make html
+$ make docs
+```
+
+Or build and serve with auto-reload:
+
+```console
+$ make auto
+```
+
+Check documentation links:
+
+```console
+$ make linkcheck
 ```
 
 # How to get help
@@ -71,7 +95,7 @@ Feel free to submit early, though—we can always iterate on this.
 To run linting and code formatting checks before committing your change, you can install pre-commit as a Git hook by running the following command:
 
 ```console
-$ nox --session=pre-commit -- install
+$ uvx pre-commit install
 ```
 
 It is recommended to open an issue before starting work on anything.

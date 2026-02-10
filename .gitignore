@@ -8,3 +8,7 @@ source/gallery.txt
 .ipynb*
 /prototype/
 .Ds_Store
+
+# uv
+.venv/
+uv.lock

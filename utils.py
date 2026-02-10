@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 @author: YangyangLi
-@contact:li002252@umn.edu
+@contact: yangyang.li@northwestern.edu
 @version: 0.0.1
 @license: MIT Licence
 @file: utils.py
