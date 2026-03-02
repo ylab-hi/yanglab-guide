@@ -292,7 +292,7 @@ tornado==6.4.1
     #   livereload
 typing-extensions==4.13.2
     # via -r source/requirements.txt
-uc-micro-py==1.0.3
+uc-micro-py==2.0.0
     # via
     #   -r source/requirements.txt
     #   linkify-it-py
