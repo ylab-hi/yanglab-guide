@@ -88,7 +88,7 @@ idna==3.10
     #   -r source/requirements.txt
     #   requests
     #   yarl
-imagesize==1.4.1
+imagesize==1.5.0
     # via
     #   -r source/requirements.txt
     #   sphinx
