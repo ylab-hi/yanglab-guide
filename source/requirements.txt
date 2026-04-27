@@ -161,7 +161,7 @@ numpy==2.4.3
     #   -r source/requirements.txt
     #   contourpy
     #   matplotlib
-packaging==24.1
+packaging==26.2
     # via
     #   -r source/requirements.txt
     #   matplotlib
