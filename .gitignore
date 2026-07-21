@@ -12,3 +12,4 @@ source/gallery.txt
 # uv
 .venv/
 uv.lock
+node_modules
