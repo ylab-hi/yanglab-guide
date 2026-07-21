@@ -42,7 +42,6 @@ release = "1.0"
 # ones.
 extensions = [
     "myst_parser",
-    "sphinx.ext.intersphinx",
     "sphinx.ext.viewcode",
     "sphinx_copybutton",
     "sphinx_design",
@@ -70,11 +69,6 @@ myst_enable_extensions = [
     "tasklist",
 ]
 
-intersphinx_mapping = {
-    "mypy": ("https://mypy.readthedocs.io/en/stable/", None),
-    "python": ("https://docs.python.org/3.8", None),
-    "sphinx": ("https://www.sphinx-doc.org/en/master", None),
-}
 source_suffix = [".rst", ".md"]
 language = "en"
 linkcheck_ignore = [
