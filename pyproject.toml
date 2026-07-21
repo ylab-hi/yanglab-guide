@@ -44,3 +44,22 @@ package = false
 
 [dependency-groups]
 dev = ["nox>=2022.1.7"]
+
+[tool.ruff]
+line-length = 105
+extend-exclude = ["noxfile.py"]
+
+# Note: the previous flake8 hook installed no plugins, so only the core
+# pycodestyle (E/W), pyflakes (F) and mccabe (C90) checks were enforced.
+# Ruff's config below preserves that effective behavior.
+[tool.ruff.lint]
+select = ["E", "F", "W", "C90"]
+ignore = [
+  "E203",
+  "E501",
+  "C901",
+  "W605",
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10

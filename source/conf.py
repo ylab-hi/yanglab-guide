@@ -157,7 +157,9 @@ def get_img_path(name: str):
 
 
 def get_cover_images(items):
-    default_cover = "https://raw.githubusercontent.com/ylab-hi/yanglab-guide/main/source/_static/book.jpg"
+    default_cover = (
+        "https://raw.githubusercontent.com/ylab-hi/yanglab-guide/main/source/_static/book.jpg"
+    )
     for item in items:
         local_image_path, remote_image_path = get_img_path(item["name"])
         if not local_image_path.exists():
@@ -174,22 +176,22 @@ def build_gallery(app: Sphinx):
     star = "⭐"
     grid_items = []
     books = yaml.safe_load((Path(app.srcdir) / "library.yml").read_text())
-    amazon_domain = "https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords="
+    amazon_domain = (
+        "https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords="
+    )
     random.shuffle(books)
 
     get_cover_images(books)
 
     for item in books:
         star_num = 3 if not item.get("star") else int(item["star"])
-        star_text = (
-            f"![Star](https://img.shields.io/badge/Recommend-{star_num * star}-green)"
-        )
+        star_text = f"![Star](https://img.shields.io/badge/Recommend-{star_num * star}-green)"
 
         grid_items.append(
             f"""\
         `````{{grid-item-card}} {" ".join(item["name"].split())}
         :text-align: center
-        <a href="{amazon_domain + item['name']}" target='_blank'>
+        <a href="{amazon_domain + item["name"]}" target='_blank'>
         <img src="{item["image"]}" alt="logo" loading="lazy" style="max-width: 100%; max-height: 350px; margin-top: 1rem;" /> </a>
         +++
 

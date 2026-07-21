@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-@author: YangyangLi
+"""@author: YangyangLi
 @contact: yangyang.li@northwestern.edu
 @version: 0.0.1
 @license: MIT Licence
@@ -30,7 +29,6 @@ def format_title(title: str):
         >>> format_title('The Art of Computer Programming, Volume 1: Fundamental Algorithms (3rd Edition)')
         'The Art of Computer Programming, Volume 1: Fundamental Algorithms'
     """
-
     title = title.rsplit("(")[0].strip()
     return title
 
@@ -51,9 +49,7 @@ async def download(url, name, headers, session: aiohttp.ClientSession) -> None:
                         await asyncio.sleep(0.001)
                         await f.write(chunk)
             else:
-                raise RuntimeError(
-                    f"Cannot download {url} with status code {resp.status}"
-                )
+                raise RuntimeError(f"Cannot download {url} with status code {resp.status}")
     except Exception as e:
         LOGGER.error(f"Cannot download {url}: {e}")
 
@@ -63,9 +59,7 @@ async def _get_cover_images(items):
     async with aiohttp.ClientSession(timeout=timeout) as session:
         tasks = []
         for item in items:
-            image_path = Path(
-                f"source/_static/covers/{item['name'].replace(' ', '_')}.jpg"
-            )
+            image_path = Path(f"source/_static/covers/{item['name'].replace(' ', '_')}.jpg")
             if not image_path.exists():
                 tasks.append(_get_cover_image_worker(item, session))
             else:
@@ -105,9 +99,7 @@ async def _get_cover_image_worker(item, session):
                 LOGGER.info(f"Failed to fetch {title} cover using default")
             else:
                 # fetch the first one
-                cover = await _fetch_image(
-                    session, base_domain + cover_urls[0], headers
-                )
+                cover = await _fetch_image(session, base_domain + cover_urls[0], headers)
                 await download(cover[0], title, headers, session)
                 LOGGER.info(f"Successfully fetched {title} cover {cover[0]}")
 
