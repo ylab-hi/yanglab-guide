@@ -79,7 +79,12 @@ source_suffix = [".rst", ".md"]
 language = "en"
 linkcheck_ignore = [
     "codeofconduct.html",
+    # Intermittently times out under CI; the site is otherwise reachable.
+    r"https://www\.contributor-covenant\.org/faq",
 ]
+# Retry and allow more time for slow external hosts to avoid flaky failures.
+linkcheck_timeout = 30
+linkcheck_retries = 3
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
