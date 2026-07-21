@@ -6,8 +6,10 @@ build:
   jobs:
     pre_install:
       - pip install uv
+    # Install the project's dependencies into Read the Docs' own virtualenv
+    # (the one that runs sphinx-build), not a separate uv-managed .venv.
     post_install:
-      - uv sync --all-extras
+      - uv pip install --python "${READTHEDOCS_VIRTUALENV_PATH}/bin/python" -r pyproject.toml
 sphinx:
   configuration: source/conf.py
 formats: all
