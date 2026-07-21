@@ -12,4 +12,6 @@ build:
       - uv pip install --python "${READTHEDOCS_VIRTUALENV_PATH}/bin/python" -r pyproject.toml
 sphinx:
   configuration: source/conf.py
-formats: all
+# HTML only: this guide uses emoji headings, SVG badges and sphinx-design
+# grids that the LaTeX/PDF and EPUB builders cannot render.
+formats: []
