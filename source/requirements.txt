@@ -92,7 +92,7 @@ imagesize==2.0.0
     # via
     #   -r source/requirements.txt
     #   sphinx
-importlib-metadata==9.0.0
+importlib-metadata==10.1.0
     # via
     #   -r source/requirements.txt
     #   sphinx
